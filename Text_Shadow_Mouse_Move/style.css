@@ -1,0 +1,46 @@
+html{
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-image: linear-gradient(rgb(89, 50, 233), rgb(191, 64, 230));
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.container{
+    background-color: rgb(99, 133, 163);
+}
+.nav{
+    font-weight: bolder;
+    font-size: 6.5rem;
+    transform: rotate(-10deg);
+    text-shadow: 2px 2px 4px #000000;
+    margin-top: 5rem;
+}
+
+p{
+    color: white;
+    margin-top: 0;
+    font-weight: 400;
+    line-height: 1.8;
+    font-size: 1.8rem;
+}
+
+.about{
+    padding: 1rem 0;
+    overflow: hidden;
+    display: flex;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.half{
+    padding-right: 4rem;
+    flex-basis: 50%;
+}

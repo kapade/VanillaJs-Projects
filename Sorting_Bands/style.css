@@ -1,0 +1,23 @@
+html{
+    background-image: url(./4a606feeb074f807e1a3d37a1e32f62f-1200x900.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#bands{
+    background-color: rgb(253, 254, 255);
+    width: 50vw;
+    box-shadow: 5px 5px 2px rgb(100, 93, 93);
+    font-size: 1rem;
+}
+
+#bands li{
+    border-bottom: 1px solid #efefef;
+    padding: 10px;
+    letter-spacing: 2px;
+}
+

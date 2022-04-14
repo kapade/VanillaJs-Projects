@@ -1,0 +1,84 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #3BC1AC;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    background-color: #89d5d0;
+    background-image: radial-gradient( ellipse farthest-corner at 10px 10px , #3BC1AC, #3BC1AC 50%, #89d5d0 50%);
+    background-size: 10px 10px;
+  }
+
+  .container {
+    padding: 2rem;
+    width: 50rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+    height: 420px;
+  }
+
+.container h2{
+    width: 110%;
+    margin: -2rem 0 2rem -2rem;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    background-color:#f1be17;
+}
+
+#voice{
+    background-color: rgb(240, 233, 233);
+    width: -webkit-fill-available;
+    padding: 5px;
+    outline: 0;
+    border: 0
+}
+
+input{
+    background: #F7F7F7;
+    display: block;
+    width: -webkit-fill-available;
+    border: 0;
+}
+
+textarea{
+    background: #F7F7F7;
+    display: block;
+    width: -webkit-fill-available;
+    border: 0; 
+    height: 100px;
+    margin: 20px 0px 20px 0px;
+}
+
+button{
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    background-color:#f1be17;
+    border: 0;
+    border-radius: 2px;
+    padding: 10px;
+    width: 48%;
+    border-bottom: 5px solid #F3C010;
+    cursor: pointer;
+    position: relative;
+    margin: 4px;
+    font-style: italic;
+}

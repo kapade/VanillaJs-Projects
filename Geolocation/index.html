@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const geo = navigator.geolocation;
+      function success(position) {
+        let crd = position.coords;
+        let speed = crd.speed;
+        console.log("Your current position is:");
+        console.log(`Latitude : ${crd.latitude}`);
+        console.log(`Longitude: ${crd.longitude}`);
+        console.log(`More or less ${crd.accuracy} meters.`);
+        console.log(`The device is facing  ${crd.heading} direction from the north.`);
+      }
+      function error(err) {
+        console.warn(`ERROR(${err.code}): ${err.message}`);
+      }
+      console.log(geo);
+      console.log(geo.getCurrentPosition(success, error));
+
+    </script>
+  </body>
+</html>

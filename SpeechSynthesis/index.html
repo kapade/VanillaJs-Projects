@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+    </style>
+    <div class="container">
+      <h2>The Voicenator 5000</h2>
+      <select name="voice" id="voice">
+        <option value="">Select a Voice</option>
+      </select>
+      <label for="rate">Rate</label>
+      <input type="range" name="rate" min="0" max="10" value="1" step="0.1" />
+      <label for="pitch">Pitch</label>
+      <input type="range" name="pitch" min="0" max="2" value="1" step="0.1" />
+      <textarea name="text">Hello! I love JavaScript</textarea>
+      <button type="button" id="stop">Stop!</button>
+      <button type="button" id="speak">Speak!</button>
+    </div>
+
+    <script>
+  const msg = new SpeechSynthesisUtterance();
+  let voices = [];
+  let voicesDropdown = document.querySelector('[name="voice"]');
+  const options = document.querySelectorAll('[type="range"], [name="text"]');
+  const speakButton = document.querySelector('#speak');
+  const stopButton = document.querySelector('#stop');
+   msg.text = document.querySelector('[name="text"]').value;
+  
+      
+      const synth = window.speechSynthesis;
+      function populateVoices(){
+        voices = this.getVoices();
+        voicesDropdown.innerHTML = voices.map(voice=>`<option value="${voice.name}">${voice.name}: language: (${voice.lang})</option>`)
+      }
+      function setVoice(){
+        msg.voice = voices.find(voice=>voice.name ===this.value )
+        synth.speak(msg)
+        toggle();
+      }
+      
+      function toggle(startOver = true){
+        synth.cancel()
+        if(startOver){
+
+          synth.speak(msg)
+        }
+      }
+      function setOption(){
+        msg[this.name] = this.value
+        toggle();
+      }
+
+      synth.addEventListener('voiceschanged',populateVoices)
+      voicesDropdown.addEventListener('change',setVoice)
+      options.forEach(option=>option.addEventListener('change',setOption))
+      speakButton.addEventListener('click',toggle);
+      stopButton.addEventListener('click',toggle.bind(null,false));
+      </script>
+  </body>
+</html>
